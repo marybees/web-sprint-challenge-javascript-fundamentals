@@ -14,6 +14,12 @@
 //     return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
 //   };
 
+//   const cuboid = new CuboidMaker({
+//     length: 4,
+//     width: 5,
+//     height: 5,
+//   });
+
 class CuboidMaker {
     constructor(attributes) {
         this.length = attributes.length;
@@ -27,12 +33,6 @@ class CuboidMaker {
         return (2 * (this.length * this.width + this.length * this.height + this.width * this.height))
     }
 };
-
-//   const cuboid = new CuboidMaker({
-//     length: 4,
-//     width: 5,
-//     height: 5,
-//   });
 
 const cuboid = new CuboidMaker({
     length: 4,
