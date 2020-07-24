@@ -21,30 +21,12 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 
-// .forEach()
-// must iterate through every item in an array without stopping 
-// forEach does not return a new array 
-// return statement is optional
-
-//Skeleton
-// array.forEach(function(item){
-//   // could console.log or return depending on what we need to do 
-// });
-
-// cityData.forEach(function(item){
-//   console.log(item.city);
-//   console.log(item.state);
-// });
-
-// take the state initials and push them to a new array in lowercase 
-// const lowerCase = [];
-// cityData.forEach(function(element){
-//   return lowerCase.push(element.state.toLowerCase());
-// });
-
-// console.log(lowerCase);
-
 const displayNames = [];
+
+zooAnimals.forEach(function(animal) {
+  return displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}`);
+});
+
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -53,7 +35,11 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames
+const lowCaseAnimalNames = [];
+zooAnimals.map(function(animal) {
+  return lowCaseAnimalNames.push(animal.animal_name.toLowerCase());
+});
+
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -61,8 +47,34 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals
+const lowPopulationAnimals = [];
+zooAnimals.filter(function(animal) {
+  let endangered = animal.population < 5;
+  return lowPopulationAnimals.push(endangered);
+});
 console.log(lowPopulationAnimals);
+
+//.filter()
+// return a new array 
+// does not manipulate the original 
+// it filters out results into a new array 
+// anything true will be included // anything false will be ignored 
+
+// const bigPops = cityData.filter(function(item){
+//   // anything that meets this condition will be included 
+//   // else it will be excluded
+//   return item.population > 500000;
+//   // should include everything except kanas city
+  
+// });
+
+// Using an arrow function:
+
+// const filterLargeStates = data.filter((state) => {
+//   return state.population >= 650000;
+// });
+
+// // console.log(bigPops);
 
 /* Request 4: .reduce() 
 
