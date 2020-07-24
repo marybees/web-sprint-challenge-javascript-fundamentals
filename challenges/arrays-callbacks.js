@@ -52,34 +52,15 @@ const lowPopulationAnimals = zooAnimals.filter(function(animal) {
 });
 console.log(lowPopulationAnimals);
 
-//.filter()
-// return a new array 
-// does not manipulate the original 
-// it filters out results into a new array 
-// anything true will be included // anything false will be ignored 
-
-// const bigPops = cityData.filter(function(item){
-//   // anything that meets this condition will be included 
-//   // else it will be excluded
-//   return item.population > 500000;
-//   // should include everything except kanas city
-  
-// });
-
-// Using an arrow function:
-
-// const filterLargeStates = data.filter((state) => {
-//   return state.population >= 650000;
-// });
-
-// // console.log(bigPops);
-
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = 0;
+let populationTotal = zooAnimals.reduce(function(accumulator, currentAnimal) {
+  return accumulator + currentAnimal.population;
+},0);
+
 console.log(populationTotal);
 
 
