@@ -20,6 +20,30 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+
+// .forEach()
+// must iterate through every item in an array without stopping 
+// forEach does not return a new array 
+// return statement is optional
+
+//Skeleton
+// array.forEach(function(item){
+//   // could console.log or return depending on what we need to do 
+// });
+
+// cityData.forEach(function(item){
+//   console.log(item.city);
+//   console.log(item.state);
+// });
+
+// take the state initials and push them to a new array in lowercase 
+// const lowerCase = [];
+// cityData.forEach(function(element){
+//   return lowerCase.push(element.state.toLowerCase());
+// });
+
+// console.log(lowerCase);
+
 const displayNames = [];
 console.log(displayNames);
 
